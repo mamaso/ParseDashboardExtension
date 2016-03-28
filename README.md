@@ -12,4 +12,9 @@ You will need to add the following app settings to your web app, a parse-dashboa
   * MASTER_KEY: Your Parse Master Key
 
   
-To build the site extension, run buildSiteExtension.ps1
+To build the site extension, run buildSiteExtension.ps1, which executes the following steps:
+ 1. builds and bundles the parse dashboard
+ 2. copy bundle/code/package.json to ParseDashboardExtension/Content
+ 3. installs production node modules inside the content directory
+ 4. cleans unnecessary files/folders from production node modules
+ 5. creates the nuget package
