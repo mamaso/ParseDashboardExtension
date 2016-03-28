@@ -10,3 +10,6 @@ You will need to add the following app settings to your web app, a parse-dashboa
   * SERVER_URL: 'https://yourwebappname.azurewebsites.net'
   * APP_ID: Your Parse App Id
   * MASTER_KEY: Your Parse Master Key
+
+  
+To build the site extension, run buildSiteExtension.ps1
