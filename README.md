@@ -7,7 +7,7 @@ Install from portal -> web app -> tools -> site extensions -> ParseDashboardExte
 Access the dashboard through https://yourwebappname.scm.azurewebsites.net/parse-dashboard
 
 You will need to add the following app settings to your web app, a parse-dashboard-config.json is automatically generated from them.
-  * SERVER_URL: 'https://yourwebappname.azurewebsites.net'
+  * SERVER_URL: The url to your parse server, 'https://yourwebappname.azurewebsites.net'
   * APP_ID: Your Parse App Id
   * MASTER_KEY: Your Parse Master Key
 
