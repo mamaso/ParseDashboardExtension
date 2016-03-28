@@ -117,7 +117,7 @@ class Dashboard extends React.Component {
   }
 
   componentDidMount() {
-    get('/parse-dashboard-config.json').then(({ apps, newFeaturesInLatestVersion = [] }) => {
+    get('parse-dashboard-config.json').then(({ apps, newFeaturesInLatestVersion = [] }) => {
       this.setState({ newFeaturesInLatestVersion });
       let appInfoPromises = apps.map(app => {
         if (app.serverURL.startsWith('https://api.parse.com/1')) {
@@ -205,7 +205,7 @@ class Dashboard extends React.Component {
       <Route path='/' component={App}>
         <Route path='apps' component={AppsIndexPage} />
 
-        <Redirect from='apps/:appId' to='/apps/:appId/browser' />
+        <Redirect from='apps/:appId' to='apps/:appId/browser' />
         <Route path='apps/:appId' component={AppData}>
           <Route path='getting_started' component={Empty} />
 
@@ -215,7 +215,7 @@ class Dashboard extends React.Component {
           <Route path='cloud_code' component={CloudCode} />
           <Route path='cloud_code/*' component={CloudCode} />
           <Route path='webhooks' component={Webhooks} />
-          <Redirect from='jobs' to='/apps/:appId/jobs/scheduled' />
+          <Redirect from='jobs' to='apps/:appId/jobs/scheduled' />
           <Route path='jobs' component={JobsData}>
             <Route path='new' component={JobEdit} />
             <Route path='edit/:jobId' component={JobEdit} />
@@ -226,24 +226,24 @@ class Dashboard extends React.Component {
           <Route path='config' component={Config} />
           <Route path='api_console' component={ApiConsole} />
           <Route path='migration' component={Migration} />
-          <Redirect from='push' to='/apps/:appId/push/activity/all' />
-          <Redirect from='push/activity' to='/apps/:appId/push/activity/all' />
+          <Redirect from='push' to='apps/:appId/push/activity/all' />
+          <Redirect from='push/activity' to='apps/:appId/push/activity/all' />
           <Route path='push/activity/:category' component={PushIndex} />
           <Route path='push/audiences' component={PushAudiencesIndex} />
           <Route path='push/new' component={PushNew} />
           <Route path='push/:pushId' component={PushDetails} />
 
-          <Redirect from='analytics' to='/apps/:appId/analytics/overview' />
+          <Redirect from='analytics' to='apps/:appId/analytics/overview' />
           <Route path='analytics'>
             <Route path='overview' component={AnalyticsOverview} />
-            <Redirect from='explorer' to='/apps/:appId/analytics/explorer/chart' />
+            <Redirect from='explorer' to='apps/:appId/analytics/explorer/chart' />
             <Route path='explorer/:displayType' component={Explorer} />
             <Route path='retention' component={Retention} />
             <Route path='performance' component={Performance} />
             <Route path='slow_queries' component={SlowQueries} />
           </Route>
 
-          <Redirect from='settings' to='/apps/:appId/settings/general' />
+          <Redirect from='settings' to='apps/:appId/settings/general' />
           <Route path='settings' component={SettingsData}>
             <Route path='general' component={GeneralSettings} />
             <Route path='keys' component={SecuritySettings} />

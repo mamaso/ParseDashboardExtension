@@ -38,7 +38,7 @@ let CloningNote = ({ app, clone_status, clone_progress }) => {
   }
   let progress = <LiveReload
     initialData={[{appId: app.applicationId, progress: clone_progress}]}
-    source='/apps/cloning_progress'
+    source='apps/cloning_progress'
     render={data => {
       let currentAppProgress = data.find(({ appId }) => appId === app.applicationId);
       let progressStr = currentAppProgress ? currentAppProgress.progress.toString() : '0';
@@ -66,7 +66,7 @@ let AppCard = ({
   app,
   icon,
 }) => {
-  let canBrowse = app.serverInfo.error ? null : () => history.push(html`/apps/${app.slug}/browser`);
+  let canBrowse = app.serverInfo.error ? null : () => history.push(html`apps/${app.slug}/browser`);
   let versionMessage = app.serverInfo.error ?
     <div className={styles.serverVersion}>Server not reachable: <span className={styles.ago}>{app.serverInfo.error.toString()}</span></div>:
     <div className={styles.serverVersion}>

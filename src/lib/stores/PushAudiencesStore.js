@@ -24,8 +24,8 @@ let xhrMap = {};
 
 function PushAudiencesStore(state, action) {
   action.app.setParseKeys();
-  let urlPrefix = `/apps/${action.app.slug}/dashboard_ajax/push_audiences`;
-  let legacyUrlPrefix = `/apps/${action.app.slug}/push_audiences`;
+  let urlPrefix = `apps/${action.app.slug}/dashboard_ajax/push_audiences`;
+  let legacyUrlPrefix = `apps/${action.app.slug}/push_audiences`;
   switch (action.type) {
     case ActionTypes.FETCH:
       if (state && new Date() - state.get('lastFetch') < LASTFETCHTIMEOUT) { //check for stale store

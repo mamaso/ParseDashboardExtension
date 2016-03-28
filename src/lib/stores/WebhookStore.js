@@ -34,7 +34,7 @@ function WebhookStore(state, action) {
         {},
         { useMasterKey: true }
       );
-      let herokuAppsPromise = get('/apps/' + action.app.slug + '/cloud_code/heroku_link').then(({ herokuApps }) => {
+      let herokuAppsPromise = get('apps/' + action.app.slug + '/cloud_code/heroku_link').then(({ herokuApps }) => {
         herokuApps = herokuApps ? herokuApps : [];
         let appNamePromises = herokuApps.map(herokuApp => {
           return getHerokuAppName('https://api.heroku.com/apps/' + herokuApp.herokuAppId).then(({ name })  => {

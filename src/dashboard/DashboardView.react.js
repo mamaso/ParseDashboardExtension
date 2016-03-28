@@ -245,7 +245,7 @@ export default class DashboardView extends React.Component {
       appSelector={true}
       section={this.section}
       subsection={this.subsection}
-      prefix={'/apps/' + appSlug}
+      prefix={'apps/' + appSlug}
       action={this.action}>
       {sidebarChildren}
     </Sidebar>);

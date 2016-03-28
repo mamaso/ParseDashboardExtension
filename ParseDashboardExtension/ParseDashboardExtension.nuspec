@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>ParseDashboardExtension</id>
+    <title>ParseDashboardExtension</title>
+    <version>0.0.5</version>
+    <authors>Matt Mason</authors>
+    <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
+    <projectUrl>https://github.com/mamaso/ParseDashboardExtension</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Runs the parse dashboard at https://site.scm.azurewebsites/parse-dashboard</description>
+    <iconUrl>https://pbs.twimg.com/profile_images/674770932607483904/68wTsXcT.png</iconUrl>
+    <tags>parse dashboard</tags>
+  </metadata>
+</package>

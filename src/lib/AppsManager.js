@@ -56,7 +56,7 @@ const AppsManager = {
   },
 
   deleteApp(slug, password) {
-    return del('/apps/' + slug + '?password_confirm_delete=' + password).then(() => {
+    return del('apps/' + slug + '?password_confirm_delete=' + password).then(() => {
       for (let i = 0; i < appsStore.length; i++) {
         if (appsStore[i].slug == slug) {
           appsStore.splice(i, 1);
@@ -94,7 +94,7 @@ const AppsManager = {
         optionsForRuby[option] = true;
       }
     });
-    let path = '/apps/' + slug + '/clone_app';
+    let path = 'apps/' + slug + '/clone_app';
     let request = post(path, {
       app_name: name,
       options: optionsForRuby,
@@ -118,7 +118,7 @@ const AppsManager = {
       payload.password_confirm_transfer = password;
     }
 
-    let promise = post('/apps/' + slug + '/transfer', payload);
+    let promise = post('apps/' + slug + '/transfer', payload);
     promise.then((response) => {
       //TODO modify appsStore to reflect transfer
     });

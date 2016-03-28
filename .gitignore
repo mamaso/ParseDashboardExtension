@@ -8,3 +8,9 @@ npm-debug.log
 
 // vim .swp
 *.swp
+
+// Site Extension Gallery Generated Objects
+*.nupkg
+ParseDashboardExtension/Content/Parse-Dashboard/
+ParseDashboardExtension/Content/package.json
+

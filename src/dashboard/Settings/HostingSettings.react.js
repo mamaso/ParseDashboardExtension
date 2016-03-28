@@ -221,7 +221,7 @@ export default class HostingSettings extends DashboardView {
 				label={<Label
 					text={"Custom “choose a new password” page"}
 					//getSiteDomain() is required here and not for the other templates because this template is an erb file, as opposed to the others which are html.
-					description={<span>This page will be loaded when users click on a reset password link. <a href={getSiteDomain() + '/apps/choose_password'} download="choose_password.html">Download the template</a>.</span>} />
+					description={<span>This page will be loaded when users click on a reset password link. <a href={getSiteDomain() + 'apps/choose_password'} download="choose_password.html">Download the template</a>.</span>} />
 				}
 				input={<TextInput
 					value={fields.choose_password_link}
@@ -232,7 +232,7 @@ export default class HostingSettings extends DashboardView {
 				labelWidth={62}
 				label={<Label
 					text={"Custom “password changed” page"}
-					description={<span>This page will be loaded when users successfully change their password. <a href="/apps/password_reset_success.html" download="password_updated.html">Download the template</a>.</span>} />
+					description={<span>This page will be loaded when users successfully change their password. <a href="apps/password_reset_success.html" download="password_updated.html">Download the template</a>.</span>} />
 				}
 				input={<TextInput
 					value={fields.password_updated_link}
@@ -243,7 +243,7 @@ export default class HostingSettings extends DashboardView {
 				labelWidth={62}
 				label={<Label
 					text={"Custom “email verified” page"}
-					description={<span>This page will be loaded when users verify their email address. <a href="/apps/verify_email_success.html" download="email_verification.html">Download the template</a>.</span>} />
+					description={<span>This page will be loaded when users verify their email address. <a href="apps/verify_email_success.html" download="email_verification.html">Download the template</a>.</span>} />
 				}
 				input={<TextInput
 					value={fields.email_verification_link}
@@ -254,7 +254,7 @@ export default class HostingSettings extends DashboardView {
 				labelWidth={62}
 				label={<Label
 					text={"Custom 404 page"}
-					description={<span>This page will be loaded whenever users mistype the reset password or verify email links. <a href="/apps/invalid_link.html" download="invalid_link.html">Download the template</a>.</span>} />
+					description={<span>This page will be loaded whenever users mistype the reset password or verify email links. <a href="apps/invalid_link.html" download="invalid_link.html">Download the template</a>.</span>} />
 				}
 				input={<TextInput
 					value={fields.invalid_link_link}
@@ -270,7 +270,7 @@ export default class HostingSettings extends DashboardView {
 				labelWidth={62}
 				label={<Label
 					text={"Parse Frame URL"}
-					description={<span>Upload <a href="/apps/user_management" download="user_management.html">this file</a> to your server and tell us where you put it.</span>} />
+					description={<span>Upload <a href="apps/user_management" download="user_management.html">this file</a> to your server and tell us where you put it.</span>} />
 				}
 				input={<TextInput
 					value={fields.external_frame_link}

@@ -29,12 +29,12 @@ function JobsStore(state, action) {
       if (state && new Date() - state.get('lastFetch') < 60000) {
         return Parse.Promise.as(state);
       }
-      path = `/apps/${action.app.slug}/cloud_code/jobs?per_page=50`;
+      path = `apps/${action.app.slug}/cloud_code/jobs?per_page=50`;
       return AJAX.get(path).then((results) => {
         return Map({ lastFetch: new Date(), jobs: List(results) });
       });
     case ActionTypes.CREATE:
-      path = `/apps/${action.app.slug}/cloud_code/jobs`;
+      path = `apps/${action.app.slug}/cloud_code/jobs`;
       return AJAX.post(path, action.schedule).then((result) => {
         let { ...schedule } = action.schedule.job_schedule;
         schedule.objectId = result.objectId;
@@ -42,7 +42,7 @@ function JobsStore(state, action) {
         return state.set('jobs', state.get('jobs').push(schedule));
       });
     case ActionTypes.EDIT:
-      path = `/apps/${action.app.slug}/cloud_code/jobs/${action.jobId}`;
+      path = `apps/${action.app.slug}/cloud_code/jobs/${action.jobId}`;
       return AJAX.put(path, action.updates).then(() => {
         let index = state.get('jobs').findIndex((j) => j.objectId === action.jobId);
         let current = state.get('jobs').get(index);
@@ -52,7 +52,7 @@ function JobsStore(state, action) {
         return state.set('jobs', state.get('jobs').set(index, update));
       });
     case ActionTypes.DELETE:
-      path = `/apps/${action.app.slug}/cloud_code/jobs/${action.jobId}`;
+      path = `apps/${action.app.slug}/cloud_code/jobs/${action.jobId}`;
       return AJAX.del(path).then(() => {
         let index = state.get('jobs').findIndex((j) => j.objectId === action.jobId);
         return state.set('jobs', state.get('jobs').delete(index));

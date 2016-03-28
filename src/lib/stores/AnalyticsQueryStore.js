@@ -168,7 +168,7 @@ export const ActionTypes = keyMirror([
 
 function AnalyticsQueryStore(state, action) {
   action.app.setParseKeys();
-  let urlPrefix = `/apps/${action.app.slug}/explorer`;
+  let urlPrefix = `apps/${action.app.slug}/explorer`;
 
   switch (action.type) {
     case ActionTypes.LIST:

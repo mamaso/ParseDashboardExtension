@@ -27,7 +27,7 @@ let AppData = React.createClass({
   },
 
   generatePath(path) {
-    return '/apps/' + this.props.params.appId + '/' + path;
+    return 'apps/' + this.props.params.appId + '/' + path;
   },
 
   render() {

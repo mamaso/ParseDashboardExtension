@@ -174,7 +174,7 @@ let getExperimentPartial = (pushDetails, type, isMessageType, style) => {
 }
 
 let getPushDetailUrl = (context, pushId) => {
-  return `/apps/${context.currentApp.slug}/push/${pushId}`;
+  return `apps/${context.currentApp.slug}/push/${pushId}`;
 }
 
 let formatAnalyticsData = (data) => {
